@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Disclosure } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 
-const navigation = [
-  { id: 0, name: 'About', href: '#about', current: true },
-  { id: 2, name: 'Roadmap', href: '#roadmap', current: false },
-  { id: 3, name: 'FAQ', href: '#faq', current: false },
-  { id: 4, name: 'Team', href: '#team', current: false }
-];
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar() {
+  const [navigation, setNavigation] = useState([
+    { id: 0, name: 'About', href: '#about', current: false },
+    { id: 2, name: 'Roadmap', href: '#roadmap', current: false },
+    { id: 3, name: 'FAQ', href: '#faq', current: false },
+    { id: 4, name: 'Team', href: '#team', current: false }
+  ]);
+  const gotoSection = (id) => {
+    console.log(id);
+    const _navigation = [...navigation];
+    _navigation.forEach(item => {
+      item.current = false;
+      if (item.id === id) {
+        item.current = true;
+      }
+    });
+    setNavigation(_navigation);
+  };
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -53,6 +65,7 @@ export default function Navbar() {
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
+                        onClick={() => gotoSection(item.id)}
                       >
                         {item.name}
                       </a>
@@ -92,6 +105,7 @@ export default function Navbar() {
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
+                  onClick={() => gotoSection(item.id)}
                 >
                   {item.name}
                 </Disclosure.Button>
