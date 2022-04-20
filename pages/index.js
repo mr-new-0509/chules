@@ -8,6 +8,7 @@ import DFaqSection from '../components/desktop/DFaqSection';
 import DTeamSection from '../components/desktop/DTeamSection';
 import Footer from '../components/Footer';
 import MCollectionSection from '../components/mobile/MCollectionSection';
+import MRoadmapSection from '../components/mobile/MRoadmapSection';
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       {/* For Mobile */}
       <div className="block md:hidden">
         <MCollectionSection />
+        <MRoadmapSection />
       </div>
       <Footer />
     </div>

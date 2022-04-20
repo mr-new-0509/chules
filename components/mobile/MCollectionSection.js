@@ -39,18 +39,18 @@ const silderData = [
 
 export default function MCollectionSection() {
   return (
-    <div className="py-12" id="about">
+    <div className="py-24" id="about">
       <div className="mx-6">
         <p className="uppercase text-center text-gray-100 text-md">
           About our project
         </p>
-        <p className="mt-3 text-center text-gray-100 text-2xl font-bold">
+        <p className="mt-3 text-center text-gray-100 text-3xl sm:text-5xl font-bold">
           What is Chuel?
         </p>
-        <p className="mt-5 text-center text-gray-300 text-lg">
+        <p className="mt-5 text-center text-gray-300 text-lg sm:text-2xl">
           Chuel is a collection of 8888 unique penguins, categorized by levels of rarity and generated in 4K resolution with hundreds of high-quality, detailed elements.
         </p>
-        <p className="mt-5 text-center text-gray-300 text-lg">
+        <p className="mt-5 text-center text-gray-300 text-lg sm:text-2xl">
           Stored as ERC-721 tokens, they will live on the Ethereum blockchain, as they make their way into the Metaverse with their rightful owners.
         </p>
         <div className="mt-12">
@@ -72,7 +72,7 @@ export default function MCollectionSection() {
               mt-10
               px-3 py-2
               border border-transparent 
-              text-md font-medium 
+              text-md sm:text-xl font-medium 
               rounded-md
               shadow-sm
               text-gray-200 bg-gradient-to-r from-cyan-500 to-blue-500
