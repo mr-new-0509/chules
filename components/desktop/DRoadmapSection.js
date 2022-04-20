@@ -1,6 +1,7 @@
 import React from 'react';
 import Html2ReactParser from 'html-to-react/lib/parser';
 import Image from 'next/image';
+import heroPic from '../../public/assets/images/roadmap_hero.png';
 
 const phases = [
   {
@@ -143,11 +144,13 @@ export default function DRoadmapSection() {
         </ol>
       </div>
       <div className="absolute top-[16%] right-[10%] w-[42%] h-3/5">
-        <Image
-          src="/assets/images/roadmap_hero.png"
-          alt="gumbubble_babe"
-          layout="fill"
-        />
+        <div className="relative">
+          <Image
+            src={heroPic}
+            alt="gumbubble_babe"
+          />
+          <div className="absolute bottom-0 w-full bg-gradient-to-t from-gray-900 h-24"></div>
+        </div>
       </div>
     </div>
   );
