@@ -7,3 +7,8 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+.roadmap-list li {
+  color: #3aa2ff;
+  margin-bottom: 30px;
+}

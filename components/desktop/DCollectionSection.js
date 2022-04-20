@@ -42,7 +42,7 @@ const silderData2 = [
 
 export default function DCollectionSection() {
   return (
-    <div className="py-24 bg-gray-900">
+    <div className="py-24">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-24 items-center">
           <div className="flex flex-start">

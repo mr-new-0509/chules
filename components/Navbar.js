@@ -5,7 +5,6 @@ import { Icon } from '@iconify/react';
 
 const navigation = [
   { id: 0, name: 'About', href: '#about', current: true },
-  { id: 1, name: 'Collection', href: '#collection', current: false },
   { id: 2, name: 'Roadmap', href: '#roadmap', current: false },
   { id: 3, name: 'FAQ', href: '#faq', current: false },
   { id: 4, name: 'Team', href: '#team', current: false }
