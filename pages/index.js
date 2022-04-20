@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import DHeroSection from '../components/desktop/DHeroSection';
 import DCollectionSection from '../components/desktop/DCollectionSection';
 import DRoadmapSection from '../components/desktop/DRoadmapSection';
+import DFaqSection from '../components/desktop/DFaqSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <DHeroSection />
       <DCollectionSection />
       <DRoadmapSection />
+      <DFaqSection />
     </div>
   );
 }

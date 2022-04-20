@@ -45,7 +45,7 @@ const phases = [
       {
         id: 1,
         content:
-          "Lets Play Babes Club Opens<br /> MetaBabeClub official Merch store will be open to all members of the babe club. You must hold a NFT to participate in the merch<br /> store.",
+          "Lets Play Babes Club Opens<br /> MetaBabeClub official Merch store will be open to all members of the babe club. <br />You must hold a NFT to participate in the merch store.",
       },
       {
         id: 2,
@@ -83,7 +83,7 @@ export default function DRoadmapSection() {
   const htmlToReactParser = new Html2ReactParser();
   return (
     <div className="relative" id="roadmap">
-      <div className="container mx-auto my-24">
+      <div className="container mx-auto py-24">
         <p className="text-center text-5xl text-gray-100 font-bold">Roadmap</p>
         <ol className="relative border-l border-white ml-56 mt-28">
           {
@@ -130,7 +130,7 @@ export default function DRoadmapSection() {
                       phase.lists.map(list => (
                         <li key={list.id}>
                           <span
-                            className="text-[15px] text-white font-raleway font-normal"
+                            className="text-xl text-white font-raleway font-normal"
                           >{htmlToReactParser.parse(list.content)}</span>
                         </li>
                       ))
@@ -142,7 +142,7 @@ export default function DRoadmapSection() {
           }
         </ol>
       </div>
-      <div className="absolute top-[16%] right-[10%] w-[35%] h-3/5">
+      <div className="absolute top-[16%] right-[10%] w-[42%] h-3/5">
         <Image
           src="/assets/images/roadmap_hero.png"
           alt="gumbubble_babe"
