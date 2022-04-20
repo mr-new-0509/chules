@@ -1,0 +1,90 @@
+import React from 'react';
+import Image from 'next/image';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const settings = {
+  dots: false,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 2000,
+  autoplaySpeed: 2000,
+  cssEase: "linear",
+  arrows: false,
+  vertical: false,
+  pauseOnHover: false
+};
+
+const silderData = [
+  'whale1.png',
+  'whale2.png',
+  'whale3.png',
+  'whale4.png',
+  'whale5.png',
+  'whale6.png',
+  'whale7.png',
+  'whale8.png',
+  'whale9.png',
+  'whale10.png',
+  'whale11.png',
+  'whale12.png',
+  'whale13.png',
+  'whale14.png',
+  'whale15.png',
+  'whale16.png'
+];
+
+export default function MCollectionSection() {
+  return (
+    <div className="py-12" id="about">
+      <div className="mx-6">
+        <p className="uppercase text-center text-gray-100 text-md">
+          About our project
+        </p>
+        <p className="mt-3 text-center text-gray-100 text-2xl font-bold">
+          What is Chuel?
+        </p>
+        <p className="mt-5 text-center text-gray-300 text-lg">
+          Chuel is a collection of 8888 unique penguins, categorized by levels of rarity and generated in 4K resolution with hundreds of high-quality, detailed elements.
+        </p>
+        <p className="mt-5 text-center text-gray-300 text-lg">
+          Stored as ERC-721 tokens, they will live on the Ethereum blockchain, as they make their way into the Metaverse with their rightful owners.
+        </p>
+        <div className="mt-12">
+          <Slider {...settings}>
+            {
+              silderData.map(nameItem => (
+                <div key={nameItem} className="px-2">
+                  <Image src={`/assets/images/${nameItem}`} alt={nameItem} width={200} height={200} />
+                </div>
+              ))
+            }
+          </Slider>
+        </div>
+        <div className="flex justify-center">
+          <button
+            type="button"
+            className="
+              inline-flex items-center
+              mt-10
+              px-3 py-2
+              border border-transparent 
+              text-md font-medium 
+              rounded-md
+              shadow-sm
+              text-gray-200 bg-gradient-to-r from-cyan-500 to-blue-500
+              hover:from-gray-100 hover:to-gray-100 hover:text-gray-700
+            "
+          >
+            Join Us on Discord
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  );
+}

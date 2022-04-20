@@ -46,7 +46,7 @@ export default function DCollectionSection() {
       <div className="container mx-auto">
         <div
           className="
-            grid justify-between items-center
+            grid items-center
             grid-cols-2
             lg:grid-cols-2 
             md:grid-cols-1
@@ -54,6 +54,7 @@ export default function DCollectionSection() {
             xl:gap-24
             lg:gap-18
             md:gap-12
+            sm:gap-6
           "
         >
           <div className="flex flex-start">
