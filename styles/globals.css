@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-hero {
+  background: url('/assets/images/heroes.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
