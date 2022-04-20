@@ -22,7 +22,7 @@ export default function HeroSection() {
             text-sm font-normal
           "
         >
-          WE'RE HAPPY YOU FOUND US
+          WE ARE HAPPY YOU FOUND US
         </p>
         <p 
           className="
