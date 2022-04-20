@@ -40,7 +40,7 @@ const faqs = [
   },
 ];
 
-export default function DFaqSection() {
+export default function FaqSection() {
   const [openedFaqs, setOpenedFaqs] = useState([]);
 
   const openFaq = (id) => {
@@ -55,9 +55,18 @@ export default function DFaqSection() {
 
   return (
     <div className="container mx-auto pb-24" id="faq">
-      <p className="uppercase text-center text-5xl text-gray-100 font-bold">Faq</p>
-      <div className="mt-24 flex justify-between space-x-12">
-        <div className="flex flex-col gap-y-4 w-1/2">
+      <p
+        className="
+          text-3xl text-white
+          sm:text-5xl
+          font-bodoni font-bold
+          text-center
+        "
+      >
+        FAQ
+      </p>
+      <div className="mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 justify-between gap-x-12 mx-12 sm:mx-0">
+        <div className="flex flex-col gap-y-4">
           {
             faqs.map(faq => (
               <div key={faq.id}>
@@ -152,7 +161,7 @@ export default function DFaqSection() {
           }
         </div>
 
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col sm:mt-0 mt-4">
           {
             faqs.map(faq => (
               <div key={faq.id} className={faq.id !== 1 ? 'mb-4' : ''}>

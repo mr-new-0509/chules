@@ -83,7 +83,7 @@ export default function MRoadmapSection() {
   return (
     <div
       id="roadmap"
-      className="py-24"
+      className="pb-24"
     >
       <p
         className="

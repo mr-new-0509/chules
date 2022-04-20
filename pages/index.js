@@ -4,11 +4,11 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import DCollectionSection from '../components/desktop/DCollectionSection';
 import DRoadmapSection from '../components/desktop/DRoadmapSection';
-import DFaqSection from '../components/desktop/DFaqSection';
 import DTeamSection from '../components/desktop/DTeamSection';
 import Footer from '../components/Footer';
 import MCollectionSection from '../components/mobile/MCollectionSection';
 import MRoadmapSection from '../components/mobile/MRoadmapSection';
+import FaqSection from '../components/FaqSection';
 
 export default function Home() {
   return (
@@ -26,8 +26,6 @@ export default function Home() {
       <div className="hidden md:block">
         <DCollectionSection />
         <DRoadmapSection />
-        <DFaqSection />
-        <DTeamSection />
       </div>
 
       {/* For Mobile */}
@@ -35,6 +33,9 @@ export default function Home() {
         <MCollectionSection />
         <MRoadmapSection />
       </div>
+
+      <FaqSection />
+      <DTeamSection />
       <Footer />
     </div>
   );
