@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import DCollectionSection from '../components/desktop/DCollectionSection';
 import DRoadmapSection from '../components/desktop/DRoadmapSection';
-import DTeamSection from '../components/desktop/DTeamSection';
+import TeamSection from '../components/TeamSection';
 import Footer from '../components/Footer';
 import MCollectionSection from '../components/mobile/MCollectionSection';
 import MRoadmapSection from '../components/mobile/MRoadmapSection';
@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       <FaqSection />
-      <DTeamSection />
+      <TeamSection />
       <Footer />
     </div>
   );
