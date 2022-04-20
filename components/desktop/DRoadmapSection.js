@@ -1,5 +1,4 @@
 import React from 'react';
-import Html2ReactParser from 'html-to-react/lib/parser';
 import Image from 'next/image';
 import heroPic from '../../public/assets/images/roadmap_hero.png';
 
@@ -81,7 +80,6 @@ const phases = [
 ];
 
 export default function DRoadmapSection() {
-  const htmlToReactParser = new Html2ReactParser();
   return (
     <div className="relative" id="roadmap">
       <div className="container mx-auto py-24">
@@ -106,7 +104,8 @@ export default function DRoadmapSection() {
                     phase.description && (
                       <p
                         className="text-base text-white/30 font-bodoni"
-                      >{htmlToReactParser.parse(phase.description)}</p>
+                        dangerouslySetInnerHTML={{ __html: phase.description }}
+                      />
                     )
                   }
                 </div>
@@ -132,7 +131,8 @@ export default function DRoadmapSection() {
                         <li key={list.id}>
                           <span
                             className="text-xl text-white font-raleway font-normal"
-                          >{htmlToReactParser.parse(list.content)}</span>
+                            dangerouslySetInnerHTML={{ __html: phase.description }}
+                          />
                         </li>
                       ))
                     }

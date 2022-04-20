@@ -15,7 +15,7 @@ const people = [
 
 export default function DTeamSection() {
   return (
-    <div className="container mx-auto py-24">
+    <div className="container mx-auto py-24" id="team">
       <p className="text-center text-5xl text-white font-bold">
         Our Team
       </p>

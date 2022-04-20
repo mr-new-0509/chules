@@ -42,28 +42,38 @@ const silderData2 = [
 
 export default function DCollectionSection() {
   return (
-    <div className="py-24">
+    <div className="py-24" id="about">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-24 items-center">
-          <div className="flex flex-start">
-            <Slider {...settings}>
-              {
-                silderData1.map(name => (
-                  <div key={name} className="py-2">
-                    <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
-                  </div>
-                ))
-              }
-            </Slider>
-            <Slider {...settings} rtl={true}>
-              {
-                silderData2.map(name => (
-                  <div key={name} className="py-2">
-                    <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
-                  </div>
-                ))
-              }
-            </Slider>
+        <div
+          className="
+            grid grid-cols-2 items-center
+            gap-24 
+            xl:gap-24
+            lg:gap-18
+            md:gap-12
+          "
+        >
+          <div>
+            <div className="flex flex-start">
+              <Slider {...settings}>
+                {
+                  silderData1.map(name => (
+                    <div key={name} className="py-2">
+                      <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
+                    </div>
+                  ))
+                }
+              </Slider>
+              <Slider {...settings} rtl={true}>
+                {
+                  silderData2.map(name => (
+                    <div key={name} className="py-2">
+                      <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
+                    </div>
+                  ))
+                }
+              </Slider>
+            </div>
           </div>
 
           <div>
