@@ -5,6 +5,8 @@ import DHeroSection from '../components/desktop/DHeroSection';
 import DCollectionSection from '../components/desktop/DCollectionSection';
 import DRoadmapSection from '../components/desktop/DRoadmapSection';
 import DFaqSection from '../components/desktop/DFaqSection';
+import DTeamSection from '../components/desktop/DTeamSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <DCollectionSection />
       <DRoadmapSection />
       <DFaqSection />
+      <DTeamSection />
+      <Footer />
     </div>
   );
 }

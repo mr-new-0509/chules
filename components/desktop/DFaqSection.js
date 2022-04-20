@@ -56,8 +56,8 @@ export default function DFaqSection() {
   return (
     <div className="container mx-auto pb-24" id="faq">
       <p className="uppercase text-center text-5xl text-gray-100 font-bold">Faq</p>
-      <div className="mt-12 flex justify-between space-x-12">
-        <div className="flex flex-col gap-y-2 w-1/2">
+      <div className="mt-24 flex justify-between space-x-12">
+        <div className="flex flex-col gap-y-4 w-1/2">
           {
             faqs.map(faq => (
               <div key={faq.id}>
@@ -71,9 +71,9 @@ export default function DFaqSection() {
                               <p
                                 className="
                                   ml-6
-                                  xl:text-[15px]
-                                  lg:text-[13px]
-                                  md:text-[13px]
+                                  xl:text-[3xl]
+                                  lg:text-[2xl]
+                                  md:text-[xl]
                                   text-white
                                   font-raleway font-normal
                                 "
@@ -94,9 +94,9 @@ export default function DFaqSection() {
                                 <p
                                   className="
                                     ml-6
-                                    xl:text-[15px]
-                                    lg:text-[13px]
-                                    md:text-[13px]
+                                    xl:text-[3xl]
+                                    lg:text-[2xl]
+                                    md:text-[xl]
                                     text-black
                                     font-raleway font-normal
                                   "
@@ -134,7 +134,7 @@ export default function DFaqSection() {
                             >
                               <p
                                 className="
-                                  text-[13px] text-white
+                                  text-[xl] text-white
                                   font-raleway font-normal
                                   leading-6
                                 "
@@ -155,7 +155,7 @@ export default function DFaqSection() {
         <div className="flex flex-col w-1/2">
           {
             faqs.map(faq => (
-              <div key={faq.id} className={faq.id !== 1 ? 'mb-2' : ''}>
+              <div key={faq.id} className={faq.id !== 1 ? 'mb-4' : ''}>
                 {
                   faq.id % 2 !== 1 && (
                     <div>
@@ -166,9 +166,9 @@ export default function DFaqSection() {
                               <p
                                 className="
                                   ml-6
-                                  xl:text-[15px]
-                                  lg:text-[13px]
-                                  md:text-[13px]
+                                  xl:text-[3xl]
+                                  lg:text-[3xl]
+                                  md:text-[xl]
                                   text-white
                                   font-raleway font-normal
                                 "
@@ -187,9 +187,9 @@ export default function DFaqSection() {
                                 <p
                                   className="
                                     ml-6
-                                    xl:text-[15px]
-                                    lg:text-[13px]
-                                    md:text-[13px]
+                                    xl:text-[3xl]
+                                    lg:text-[3xl]
+                                    md:text-[xl]
                                     text-black
                                     font-raleway font-normal
                                   "
@@ -225,7 +225,7 @@ export default function DFaqSection() {
                             >
                               <p
                                 className="
-                                  text-[13px] text-white
+                                  text-[xl] text-white
                                   font-raleway font-normal
                                   leading-6
                                 "
