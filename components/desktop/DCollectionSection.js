@@ -10,8 +10,8 @@ const settings = {
   slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 3000,
-  autoplaySpeed: 3000,
+  speed: 5000,
+  autoplaySpeed: 5000,
   cssEase: "linear",
   vertical: true,
   arrows: false,
@@ -46,34 +46,35 @@ export default function DCollectionSection() {
       <div className="container mx-auto">
         <div
           className="
-            grid grid-cols-2 items-center
+            grid justify-between items-center
+            grid-cols-2
+            lg:grid-cols-2 
+            md:grid-cols-1
             gap-24 
             xl:gap-24
             lg:gap-18
             md:gap-12
           "
         >
-          <div>
-            <div className="flex flex-start">
-              <Slider {...settings}>
-                {
-                  silderData1.map(name => (
-                    <div key={name} className="py-2">
-                      <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
-                    </div>
-                  ))
-                }
-              </Slider>
-              <Slider {...settings} rtl={true}>
-                {
-                  silderData2.map(name => (
-                    <div key={name} className="py-2">
-                      <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
-                    </div>
-                  ))
-                }
-              </Slider>
-            </div>
+          <div className="flex flex-start">
+            <Slider {...settings}>
+              {
+                silderData1.map(name => (
+                  <div key={name} className="py-2">
+                    <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
+                  </div>
+                ))
+              }
+            </Slider>
+            <Slider {...settings} rtl={true}>
+              {
+                silderData2.map(name => (
+                  <div key={name} className="py-2">
+                    <Image src={`/assets/images/${name}`} alt={name} width={300} height={300} />
+                  </div>
+                ))
+              }
+            </Slider>
           </div>
 
           <div>

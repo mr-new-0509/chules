@@ -131,7 +131,7 @@ export default function DRoadmapSection() {
                         <li key={list.id}>
                           <span
                             className="text-xl text-white font-raleway font-normal"
-                            dangerouslySetInnerHTML={{ __html: phase.description }}
+                            dangerouslySetInnerHTML={{ __html: list.content }}
                           />
                         </li>
                       ))
