@@ -41,7 +41,7 @@ const silderData = [
 
 export default function MCollectionSection() {
   return (
-    <div className="py-24" id="about">
+    <div className="py-24">
       <div className="mx-6">
         <MotionDiv variants={varFadeInDown}>
           <p className="uppercase text-center text-gray-100 text-md">

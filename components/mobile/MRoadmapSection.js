@@ -84,7 +84,6 @@ const phases = [
 export default function MRoadmapSection() {
   return (
     <div
-      id="roadmap"
       className="pb-24"
     >
       <MotionDiv variants={varFadeInUp}>
