@@ -94,8 +94,6 @@ export default function MCollectionSection() {
             </button>
           </MotionDiv>
         </div>
-
-
       </div>
     </div>
   );

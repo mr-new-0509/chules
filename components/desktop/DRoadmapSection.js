@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import heroPic from '../../public/assets/images/roadmap_hero.png';
+import MotionDiv from '../common/MotionDiv';
+import { varFadeInDown, varFadeInLeft, varFadeInRight } from '../../utils/animationVars';
 
 const phases = [
   {
@@ -83,31 +85,35 @@ export default function DRoadmapSection() {
   return (
     <div className="relative" id="roadmap">
       <div className="container mx-auto py-24">
-        <p className="text-center text-5xl text-gray-100 font-bold">Roadmap</p>
+        <MotionDiv variants={varFadeInDown}>
+          <p className="text-center text-5xl text-gray-100 font-bold">Roadmap</p>
+        </MotionDiv>
         <ol className="relative border-l border-white ml-56 mt-28">
           {
             phases.map(phase => (
               <li className={`relative mb-${phase.mbGap}`} key={phase.id}>
                 <div className="absolute -left-56 -top-6">
-                  <p
-                    className="
-                      xl:text-3xl
-                      lg:text-2xl
-                      md:text-xl
-                      text-white
-                      font-bodoni font-bold
-                    "
-                  >
-                    Phase {phase.id}
-                  </p>
-                  {
-                    phase.description && (
-                      <p
-                        className="text-base text-white/30 font-bodoni"
-                        dangerouslySetInnerHTML={{ __html: phase.description }}
-                      />
-                    )
-                  }
+                  <MotionDiv variants={varFadeInLeft}>
+                    <p
+                      className="
+                        xl:text-3xl
+                        lg:text-2xl
+                        md:text-xl
+                        text-white
+                        font-bodoni font-bold
+                      "
+                    >
+                      Phase {phase.id}
+                    </p>
+                    {
+                      phase.description && (
+                        <p
+                          className="text-base text-white/30 font-bodoni"
+                          dangerouslySetInnerHTML={{ __html: phase.description }}
+                        />
+                      )
+                    }
+                  </MotionDiv>
                 </div>
                 <span
                   className="
@@ -128,12 +134,14 @@ export default function DRoadmapSection() {
                   <ul className="relative roadmap-list list-disc -mt-2 ml-12 z-20">
                     {
                       phase.lists.map(list => (
-                        <li key={list.id}>
-                          <span
-                            className="text-xl text-white font-raleway font-normal"
-                            dangerouslySetInnerHTML={{ __html: list.content }}
-                          />
-                        </li>
+                        <MotionDiv key={list.id} variants={varFadeInRight}>
+                          <li>
+                            <span
+                              className="text-xl text-white font-raleway font-normal"
+                              dangerouslySetInnerHTML={{ __html: list.content }}
+                            />
+                          </li>
+                        </MotionDiv>
                       ))
                     }
                   </ul>
@@ -145,10 +153,12 @@ export default function DRoadmapSection() {
       </div>
       <div className="absolute top-[16%] right-[10%] w-[42%] h-3/5">
         <div className="relative">
-          <Image
-            src={heroPic}
-            alt="gumbubble_babe"
-          />
+          <MotionDiv variants={varFadeInDown}>
+            <Image
+              src={heroPic}
+              alt="gumbubble_babe"
+            />
+          </MotionDiv>
           <div className="absolute bottom-0 w-full bg-gradient-to-t from-gray-900 h-24"></div>
         </div>
       </div>

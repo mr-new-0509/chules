@@ -1,6 +1,8 @@
 import React from 'react';
 import { Icon } from "@iconify/react";
 import MMapDot from '../common/MMapDot';
+import MotionDiv from '../common/MotionDiv';
+import { varFadeInUp, varFadeInDown } from '../../utils/animationVars';
 
 const phases = [
   {
@@ -85,67 +87,76 @@ export default function MRoadmapSection() {
       id="roadmap"
       className="pb-24"
     >
-      <p
-        className="
-          text-3xl text-white
-          sm:text-5xl
-          font-bodoni font-bold
-          text-center
-        "
-      >
-        Roadmap
-      </p>
+      <MotionDiv variants={varFadeInUp}>
+        <p
+          className="
+            text-3xl text-white
+            sm:text-5xl
+            font-bodoni font-bold
+            text-center
+          "
+        >
+          Roadmap
+        </p>
+      </MotionDiv>
 
       {
         phases.map(phase => (
           <div key={phase.id}>
             <MMapDot additionalClassNames="my-16" />
             <div className="mx-12">
-              <p
-                className="
+              <MotionDiv variants={varFadeInDown}>
+                <p
+                  className="
                   text-2xl text-white
                   sm:text-3xl
                   font-bold
                   text-center
                 "
-              >
-                Phase {phase.id}
-              </p>
-              {
-                phase.description && (
-                  <p
-                    className="
+                >
+                  Phase {phase.id}
+                </p>
+
+                {
+                  phase.description && (
+                    <p
+                      className="
                       sm:mt-6
                       sm:text-2xl
                       text-xl text-white/30
                       font-bodoni font-bold
                       text-center
                     "
-                    dangerouslySetInnerHTML={{ __html: phase.description }}
-                  />
-                )
-              }
+                      dangerouslySetInnerHTML={{ __html: phase.description }}
+                    />
+                  )
+                }
+              </MotionDiv>
 
               {
                 phase.lists.map(list => (
                   <div key={list.id}>
-                    <div className="mt-5 flex justify-center">
-                      <Icon
-                        icon="carbon:dot-mark"
-                        className="text-xl text-primary text-cyan-500"
+                    <MotionDiv variants={varFadeInUp}>
+                      <div className="mt-5 flex justify-center">
+                        <Icon
+                          icon="carbon:dot-mark"
+                          className="text-xl text-primary text-cyan-500"
+                        />
+                      </div>
+                    </MotionDiv>
+                    <MotionDiv variants={varFadeInUp}>
+                      <p
+                        className="
+                          mt-5
+                          sm:text-xl
+                          text-lg text-white
+                          font-raleway font-normal
+                          text-center
+                          leading-[48px]
+                        "
+                        dangerouslySetInnerHTML={{ __html: list.content }}
                       />
-                    </div>
-                    <p
-                      className="
-                        mt-5
-                        sm:text-xl
-                        text-lg text-white
-                        font-raleway font-normal
-                        text-center
-                        leading-[48px]
-                      "
-                      dangerouslySetInnerHTML={{ __html: list.content }}
-                    />
+                    </MotionDiv>
                   </div>
                 ))
               }
@@ -153,26 +164,6 @@ export default function MRoadmapSection() {
           </div>
         ))
       }
-
-      {/* <div className="mt-5 relative flex justify-center">
-        <img
-          src="/assets/images/gumbubble_babe.png"
-          alt="gumbubble_babe"
-          className="w-2/3"
-        />
-
-        <div
-          className="
-            absolute
-            bottom-0
-            w-full
-            h-[40%]
-            bg-gradient-to-t
-            from-black/30
-            z-10
-          "
-        ></div>
-      </div> */}
-    </div >
+    </div>
   );
 }
