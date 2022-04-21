@@ -7,7 +7,8 @@ const socialLinks = [
   { id: 0, icon: 'akar-icons:linkedin-fill', href: '#' },
   { id: 1, icon: 'akar-icons:twitter-fill', href: '#' },
   { id: 2, icon: 'akar-icons:discord-fill', href: '#' },
-  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' }
+  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' },
+  { id: 4, icon: 'akar-icons:facebook-fill', href: '#' }
 ];
 
 function classNames(...classes) {
@@ -18,6 +19,7 @@ export default function Navbar() {
   const [navigation, setNavigation] = useState([
     { id: 0, name: 'About', href: '#about', current: false },
     { id: 2, name: 'Roadmap', href: '#roadmap', current: false },
+    { id: 1, name: 'Club', href: '#club', current: false },
     { id: 3, name: 'FAQ', href: '#faq', current: false },
     { id: 4, name: 'Team', href: '#team', current: false }
   ]);
@@ -36,7 +38,7 @@ export default function Navbar() {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}

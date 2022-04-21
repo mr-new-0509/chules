@@ -5,7 +5,8 @@ const socialLinks = [
   { id: 0, icon: 'akar-icons:linkedin-fill', href: '#' },
   { id: 1, icon: 'akar-icons:twitter-fill', href: '#' },
   { id: 2, icon: 'akar-icons:discord-fill', href: '#' },
-  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' }
+  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' },
+  { id: 4, icon: 'akar-icons:facebook-fill', href: '#' }
 ];
 
 const navigation = {
