@@ -73,23 +73,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <div className="">
-                <button
-                  type="button"
-                  className="
-                    inline-flex items-center 
-                    px-4 py-2 
-                    border border-transparent 
-                    text-sm font-medium 
-                    rounded-md 
-                    shadow-sm 
-                    text-gray-200 bg-gradient-to-r from-cyan-500 to-blue-500
-                    hover:from-gray-100 hover:to-gray-100 hover:text-gray-700
-                  "
-                >
-                  Connect wallet
-                </button>
-              </div>
+              
             </div>
           </div>
 

@@ -13,7 +13,7 @@ export default function JoinCommunitySection() {
             <div className="flex md:justify-start justify-center">
               <button
                 type="button"
-                  className="
+                className="
                   inline-flex items-center 
                   mt-8
                   md:px-6 px-3 md:py-4 py-2

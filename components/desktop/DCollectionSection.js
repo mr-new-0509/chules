@@ -77,7 +77,6 @@ export default function DCollectionSection() {
               }
             </Slider>
           </div>
-
           <div>
             <p className="uppercase text-gray-100 text-lg font-bold">
               About our project
