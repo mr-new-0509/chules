@@ -1,50 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+
 import heroesPic from '../public/assets/images/heroes.png';
-
-const variantsTitle = {
-  hidden: {
-    y: -30,
-    opacity: 0
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4
-    },
-  }
-};
-
-const variantsButton = {
-  hidden: {
-    y: 30,
-    opacity: 0
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4
-    },
-  }
-};
+import { varFadeInDown, varFadeInUp } from '../utils/animationVars';
+import MotionDiv from './common/MotionDiv';
 
 export default function HeroSection() {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-    if (!inView) {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
-
   return (
     <div className="md:relative container mx-auto my-14">
       <div className="z-0">
@@ -60,13 +21,13 @@ export default function HeroSection() {
         "
       >
         <div className="flex flex-col justify-center h-full mx-8 md:pb-0 pb-8 border-solid border-b-[1px] border-gray-100">
-          <motion.div ref={ref} initial="hidden" animate={controls} variants={variantsTitle}>
+          <MotionDiv variants={varFadeInUp}>
             <p className="text-center text-4xl text-gray-100 font-black">
               Welcome to the <span className="uppercase text-cyan-500">Chuel</span>
             </p>
-          </motion.div>
+          </MotionDiv>
           <div className="flex justify-center mt-8">
-            <motion.div ref={ref} initial="hidden" animate={controls} variants={variantsButton}>
+            <MotionDiv variants={varFadeInDown}>
               <button
                 type="button"
                 className="
@@ -82,7 +43,7 @@ export default function HeroSection() {
               >
                 Connect wallet
               </button>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </div>
