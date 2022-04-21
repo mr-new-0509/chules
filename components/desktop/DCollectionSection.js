@@ -105,7 +105,7 @@ export default function DCollectionSection() {
                 hover:from-gray-100 hover:to-gray-100 hover:text-gray-700
               "
             >
-              Join Us on Discord
+              View on Opensea
             </button>
           </div>
         </div>
