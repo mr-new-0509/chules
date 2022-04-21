@@ -41,7 +41,7 @@ export default function Home() {
       </div>
 
       <FaqSection />
-      {/* <TeamSection /> */}
+      <TeamSection />
       <Footer />
     </div>
   );
