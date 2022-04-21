@@ -8,7 +8,7 @@ export default function EnterClubSection() {
   return (
     <div className="container mx-auto" id="club">
       <div className="relative w-full">
-        <Image src={clubPic} alt="club" width={2000} height={1000} objectFit="conver" />
+        <Image src={clubPic} alt="club" width={2000} height={800} objectFit="conver" />
         <div
           className="
             md:absolute 
@@ -47,7 +47,7 @@ export default function EnterClubSection() {
         </div>
       </div>
       <MotionDiv variants={varFadeInUp}>
-        <p className="text-white text-xl md:px-32 px-12">
+        <p className="text-white text-xl mt-5 md:px-32 px-12">
           A limited NFT collection where the token itself doubles as your membership to a swamp club for apes. The club is open! Ape in with us.
         </p>
       </MotionDiv>
