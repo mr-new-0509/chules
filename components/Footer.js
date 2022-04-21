@@ -1,4 +1,12 @@
 import React from 'react';
+import { Icon } from '@iconify/react';
+
+const socialLinks = [
+  { id: 0, icon: 'akar-icons:linkedin-fill', href: '#' },
+  { id: 1, icon: 'akar-icons:twitter-fill', href: '#' },
+  { id: 2, icon: 'akar-icons:discord-fill', href: '#' },
+  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' }
+];
 
 const navigation = {
   solutions: [
@@ -184,16 +192,35 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
+          <div className="flex space-x-3 md:order-2">
+            {
+              socialLinks.map((link) => (
+                <a
+                  key={link.id}
+                  className="
+                    rounded-full 
+                    bg-gradient-to-r from-cyan-500 to-blue-500 
+                    
+                  text-white
+                  hover:from-white hover:to-white
+                    hover:text-cyan-600
+                    xl:text-xl
+                    lg:text-xl
+                    md:text-xl
+                    sm:text-xl
+                    text-sm p-2
+                  "
+                  target="_blank"
+                  rel="noreferrer"
+                  href={link.href}
+                >
+                  <Icon icon={link.icon} />
+                </a>
+              ))
+            }
           </div>
           <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-            &copy; 2020 Workflow, Inc. All rights reserved.
+            &copy; 2022 Workflow, Inc. All rights reserved.
           </p>
         </div>
       </div>

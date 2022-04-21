@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
-import { varFadeInRight } from '../../utils/animationVars';
+import { varFadeInUp } from '../../utils/animationVars';
 import MotionDiv from '../common/MotionDiv';
 
 const settings = {
@@ -80,7 +80,7 @@ export default function DCollectionSection() {
             </Slider>
           </div>
           <div>
-            <MotionDiv variants={varFadeInRight}>
+            <MotionDiv variants={varFadeInUp}>
               <p className="uppercase text-gray-100 text-lg font-bold">
                 About our project
               </p>
@@ -89,17 +89,17 @@ export default function DCollectionSection() {
               </p>
             </MotionDiv>
 
-            <MotionDiv variants={varFadeInRight}>
+            <MotionDiv variants={varFadeInUp}>
               <p className="mt-10 text-gray-300 text-xl leading-10">
                 Chuel is a collection of 8888 unique penguins, categorized by levels of rarity and generated in 4K resolution with hundreds of high-quality, detailed elements.
               </p>
             </MotionDiv>
-            <MotionDiv variants={varFadeInRight}>
+            <MotionDiv variants={varFadeInUp}>
               <p className="mt-10 text-gray-300 text-xl leading-10">
                 Stored as ERC-721 tokens, they will live on the Ethereum blockchain, as they make their way into the Metaverse with their rightful owners.
               </p>
             </MotionDiv>
-            <MotionDiv variants={varFadeInRight}>
+            <MotionDiv variants={varFadeInUp}>
               <button
                 type="button"
                 className="

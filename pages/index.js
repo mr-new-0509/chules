@@ -10,6 +10,7 @@ import MCollectionSection from '../components/mobile/MCollectionSection';
 import MRoadmapSection from '../components/mobile/MRoadmapSection';
 import FaqSection from '../components/FaqSection';
 import JoinCommunitySection from '../components/JoinComunitySection';
+import EnterClubSection from '../components/EnterClubSection';
 
 export default function Home() {
   return (
@@ -26,18 +27,21 @@ export default function Home() {
       {/* For Desktop */}
       <div className="hidden md:block">
         <DCollectionSection />
+        <EnterClubSection />
+        <JoinCommunitySection />
         <DRoadmapSection />
       </div>
 
       {/* For Mobile */}
       <div className="block md:hidden">
         <MCollectionSection />
+        <EnterClubSection />
+        <JoinCommunitySection />
         <MRoadmapSection />
       </div>
 
       <FaqSection />
-      <JoinCommunitySection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <Footer />
     </div>
   );
