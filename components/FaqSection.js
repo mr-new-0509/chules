@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
+import MotionDiv from './common/MotionDiv';
+import { varFadeInDown, varFadeInUp } from '../utils/animationVars';
 
 const faqs = [
   {
@@ -55,16 +57,18 @@ export default function FaqSection() {
 
   return (
     <div className="container mx-auto pb-24" id="faq">
-      <p
-        className="
-          text-3xl text-white
-          sm:text-5xl
-          font-bodoni font-bold
-          text-center
-        "
-      >
-        FAQ
-      </p>
+      <MotionDiv variants={varFadeInUp}>
+        <p
+          className="
+            text-3xl text-white
+            sm:text-5xl
+            font-bodoni font-bold
+            text-center
+          "
+        >
+          FAQ
+        </p>
+      </MotionDiv>
       <div className="mt-12 sm:mt-24 grid grid-cols-1 sm:grid-cols-2 justify-between gap-x-12 mx-12 sm:mx-0">
         <div className="flex flex-col gap-y-4">
           {
@@ -73,32 +77,10 @@ export default function FaqSection() {
                 {
                   faq.id % 2 === 1 && (
                     <div>
-                      {
-                        openedFaqs.indexOf(faq.id) < 0 ? (
-                          <div className="w-full border-2 border-solid border-white">
-                            <div className="flex justify-between items-center">
-                              <p
-                                className="
-                                  ml-6
-                                  xl:text-[3xl]
-                                  lg:text-[2xl]
-                                  md:text-[xl]
-                                  text-white
-                                  font-raleway font-normal
-                                "
-                              >
-                                {faq.question}
-                              </p>
-                              <button className="py-3 w-12 bg-white" onClick={() => openFaq(faq.id)}>
-                                <div className="flex justify-center">
-                                  <Icon icon="akar-icons:plus" className="text-2xl text-black" />
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="w-full border-2 border-solid bg-white">
+                      <MotionDiv variants={varFadeInDown}>
+                        {
+                          openedFaqs.indexOf(faq.id) < 0 ? (
+                            <div className="w-full border-2 border-solid border-white">
                               <div className="flex justify-between items-center">
                                 <p
                                   className="
@@ -106,53 +88,77 @@ export default function FaqSection() {
                                     xl:text-[3xl]
                                     lg:text-[2xl]
                                     md:text-[xl]
-                                    text-black
+                                    text-white
                                     font-raleway font-normal
                                   "
                                 >
                                   {faq.question}
                                 </p>
-                                <button
-                                  className="
-                                    my-1
-                                    w-12
-                                    bg-white
-                                    border-l-[1px] border-solid border-black
-                                  "
-                                  onClick={() => closeFaq(faq.id)}
-                                >
-                                  <div className="flex justify-center py-2">
-                                    <Icon
-                                      icon="akar-icons:minus"
-                                      className="text-2xl text-black"
-                                    />
+                                <button className="py-3 w-12 bg-white" onClick={() => openFaq(faq.id)}>
+                                  <div className="flex justify-center">
+                                    <Icon icon="akar-icons:plus" className="text-2xl text-black" />
                                   </div>
                                 </button>
                               </div>
                             </div>
+                          ) : (
+                            <div>
+                              <div className="w-full border-2 border-solid bg-white">
+                                <div className="flex justify-between items-center">
+                                  <p
+                                    className="
+                                      ml-6
+                                      xl:text-[3xl]
+                                      lg:text-[2xl]
+                                      md:text-[xl]
+                                      text-black
+                                      font-raleway font-normal
+                                    "
+                                  >
+                                    {faq.question}
+                                  </p>
+                                  <button
+                                    className="
+                                      my-1
+                                      w-12
+                                      bg-white
+                                      border-l-[1px] border-solid border-black
+                                    "
+                                    onClick={() => closeFaq(faq.id)}
+                                  >
+                                    <div className="flex justify-center py-2">
+                                      <Icon
+                                        icon="akar-icons:minus"
+                                        className="text-2xl text-black"
+                                      />
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
 
-                            <div
-                              className="
-                                mt-2
-                                w-full
-                                border-2 border-solid border-white
-                                py-6
-                                pl-6
-                                pr-12
-                              "
-                            >
-                              <p
+                              <div
                                 className="
-                                  text-[xl] text-white
-                                  font-raleway font-normal
-                                  leading-6
+                                  mt-2
+                                  w-full
+                                  border-2 border-solid border-white
+                                  py-6
+                                  pl-6
+                                  pr-12
                                 "
-                                dangerouslySetInnerHTML={{ __html: faq.answer }}
-                              />
+                              >
+                                <p
+                                  className="
+                                    text-[xl] text-white
+                                    font-raleway font-normal
+                                    leading-6
+                                  "
+                                  dangerouslySetInnerHTML={{ __html: faq.answer }}
+                                />
+                              </div>
                             </div>
-                          </div>
-                        )
-                      }
+                          )
+                        }
+                      </MotionDiv>
                     </div>
                   )
                 }
@@ -168,30 +174,10 @@ export default function FaqSection() {
                 {
                   faq.id % 2 !== 1 && (
                     <div>
-                      {
-                        openedFaqs.indexOf(faq.id) < 0 ? (
-                          <div className="w-full border-2 border-solid border-white">
-                            <div className="flex justify-between items-center">
-                              <p
-                                className="
-                                  ml-6
-                                  xl:text-[3xl]
-                                  lg:text-[3xl]
-                                  md:text-[xl]
-                                  text-white
-                                  font-raleway font-normal
-                                "
-                              >{faq.question}</p>
-                              <button className="py-3 w-12 bg-white" onClick={() => openFaq(faq.id)}>
-                                <div className="flex justify-center">
-                                  <Icon icon="akar-icons:plus" className="text-2xl text-black" />
-                                </div>
-                              </button>
-                            </div>
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="w-full border-2 border-solid bg-white">
+                      <MotionDiv variants={varFadeInUp}>
+                        {
+                          openedFaqs.indexOf(faq.id) < 0 ? (
+                            <div className="w-full border-2 border-solid border-white">
                               <div className="flex justify-between items-center">
                                 <p
                                   className="
@@ -199,51 +185,73 @@ export default function FaqSection() {
                                     xl:text-[3xl]
                                     lg:text-[3xl]
                                     md:text-[xl]
-                                    text-black
+                                    text-white
                                     font-raleway font-normal
                                   "
                                 >{faq.question}</p>
-                                <button
-                                  className="
-                                    my-1
-                                    w-12
-                                    bg-white
-                                    border-l-[1px] border-solid border-black
-                                  "
-                                  onClick={() => closeFaq(faq.id)}
-                                >
-                                  <div className="flex justify-center py-2">
-                                    <Icon
-                                      icon="akar-icons:minus"
-                                      className="text-2xl text-black"
-                                    />
+                                <button className="py-3 w-12 bg-white" onClick={() => openFaq(faq.id)}>
+                                  <div className="flex justify-center">
+                                    <Icon icon="akar-icons:plus" className="text-2xl text-black" />
                                   </div>
                                 </button>
                               </div>
                             </div>
+                          ) : (
+                            <div>
+                              <div className="w-full border-2 border-solid bg-white">
+                                <div className="flex justify-between items-center">
+                                  <p
+                                    className="
+                                      ml-6
+                                      xl:text-[3xl]
+                                      lg:text-[3xl]
+                                      md:text-[xl]
+                                      text-black
+                                      font-raleway font-normal
+                                    "
+                                  >{faq.question}</p>
+                                  <button
+                                    className="
+                                      my-1
+                                      w-12
+                                      bg-white
+                                      border-l-[1px] border-solid border-black
+                                    "
+                                    onClick={() => closeFaq(faq.id)}
+                                  >
+                                    <div className="flex justify-center py-2">
+                                      <Icon
+                                        icon="akar-icons:minus"
+                                        className="text-2xl text-black"
+                                      />
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
 
-                            <div
-                              className="
-                                mt-2
-                                w-full
-                                border-2 border-solid border-white
-                                py-6
-                                pl-6
-                                pr-12
-                              "
-                            >
-                              <p
+                              <div
                                 className="
-                                  text-[xl] text-white
-                                  font-raleway font-normal
-                                  leading-6
+                                  mt-2
+                                  w-full
+                                  border-2 border-solid border-white
+                                  py-6
+                                  pl-6
+                                  pr-12
                                 "
-                                dangerouslySetInnerHTML={{ __html: faq.answer }}
-                              />
+                              >
+                                <p
+                                  className="
+                                    text-[xl] text-white
+                                    font-raleway font-normal
+                                    leading-6
+                                  "
+                                  dangerouslySetInnerHTML={{ __html: faq.answer }}
+                                />
+                              </div>
                             </div>
-                          </div>
-                        )
-                      }
+                          )
+                        }
+                      </MotionDiv>
                     </div>
                   )
                 }
