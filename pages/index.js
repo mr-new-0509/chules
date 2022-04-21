@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import MCollectionSection from '../components/mobile/MCollectionSection';
 import MRoadmapSection from '../components/mobile/MRoadmapSection';
 import FaqSection from '../components/FaqSection';
+import JoinCommunitySection from '../components/JoinComunitySection';
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       </div>
 
       <FaqSection />
+      <JoinCommunitySection />
       <TeamSection />
       <Footer />
     </div>

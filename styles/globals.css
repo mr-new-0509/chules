@@ -12,3 +12,10 @@
   color: #3aa2ff;
   margin-bottom: 30px;
 }
+
+.bg-banner {
+  background: url('/assets/images/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
