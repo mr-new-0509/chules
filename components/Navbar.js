@@ -3,7 +3,12 @@ import Image from 'next/image';
 import { Disclosure } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 
-
+const socialLinks = [
+  { id: 0, icon: 'akar-icons:linkedin-fill', href: '#' },
+  { id: 1, icon: 'akar-icons:twitter-fill', href: '#' },
+  { id: 2, icon: 'akar-icons:discord-fill', href: '#' },
+  { id: 3, icon: 'akar-icons:instagram-fill', href: '#' }
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -73,7 +78,34 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              
+
+              <div className="flex items-center gap-3">
+                {
+                  socialLinks.map((link) => (
+                    <a
+                      key={link.id}
+                      className="
+                        rounded-full 
+                        bg-gradient-to-r from-cyan-500 to-blue-500 
+                        
+                      text-white
+                      hover:from-white hover:to-white
+                        hover:text-cyan-600
+                        xl:text-xl
+                        lg:text-xl
+                        md:text-xl
+                        sm:text-xl
+                        text-sm p-2
+                      "
+                      target="_blank"
+                      rel="noreferrer"
+                      href={link.href}
+                    >
+                      <Icon icon={link.icon} />
+                    </a>
+                  ))
+                }
+              </div>
             </div>
           </div>
 
